@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //global scope
+        // let a = 5;
+        // function test(){
+        //     console.log(a);
+        // }test();
+
+        //function scope
+        // function demo(){
+        //     let b = 10;
+        //     console.log(b);
+        // }demo();
+
+        //block scope
+        // {
+        //     let c = 15;
+        //     console.log(c);
+        // }
+
+        // let x = 10;
+
+        // function demo() {
+        // let x = 20;
+        // if (true) {
+        //     var y = 30;
+        //     let z = 40;
+        // }
+        // console.log(x);
+        // console.log(y);
+        // console.log(z);
+        // }
+
+        // demo();
+
+        // function outer() {
+        //     let count = 0;
+        //     function inner() {
+        //         count++;
+        //         console.log(count);
+        //     }
+        //     return inner;
+        // }
+
+        // const fn = outer();
+        // fn();
+        // fn();
+
+        // for (let i = 1; i <= 3; i++) {
+        //     setTimeout(() => {
+        //         console.log(i);
+        //     }, 1000);
+        // }
+
+        console.log("Start");
+
+        setTimeout(() => {
+        console.log("Timeout");
+        }, 0);
+
+        Promise.resolve().then(() => {
+        console.log("Promise");
+        });
+
+        console.log("End");
+
+
+
+
+
+    </script>
+</body>
+</html>
