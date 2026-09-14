@@ -5,6 +5,8 @@ import Form from './Form';
 import Post from './Component/BlogPost/Post';
 import ArticleSorting from './Component/ArticleSorting/ArticleSorting';
 import Crud from './Component/Crud/Crud';
+import Pagination from './Component/Pagination/Pagination';
+import Parent from './Component/Props/Parent';
 
 const App = () => {
 
@@ -27,7 +29,9 @@ const App = () => {
       {/* <Form/> */}
       {/* <Post/> */}
       {/* <ArticleSorting/> */}
-      <Crud/>
+      {/* <Crud/> */}
+      {/* <Pagination/> */}
+      <Parent/>
     </div>
   )
 }
