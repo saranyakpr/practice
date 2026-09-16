@@ -1,9 +1,10 @@
 import React from 'react'
+import Button from './Button'
 
-const Child = (props) => {
+const Child = ({handleClick}) => {
   return (
     <div>
-      child: {props.data.name}, age: {props.data.age}
+      <Button text="Decrement" handleClick={handleClick}/>
     </div>
   )
 }

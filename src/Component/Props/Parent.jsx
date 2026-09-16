@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import Child from './Child'
+import React, { useState } from 'react'
+import Button from './Button';
+import Child from './Child';
 
 const Parent = () => {
-    const [state, setState] = useState(0)
 
-    const data = {
-        name: "saran",
-        age: 25
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        setCount(count + 1);
     }
 
-    useEffect(()=>{
-        console.log('print')
-    }, [state])
+    const decrement = () => {
+        setCount(count - 1);
+    }
 
   return (
     <div>
-      parent
-      <Child name="Alice" age={25} data={data} />
-      <button onClick={()=>setState(state+1)}>click</button>
-      <p>State: {state}</p>
+        {count}
+      <Button text="Increment" handleClick={increment}/>
+      <Child handleClick={decrement}/>
     </div>
   )
 }
