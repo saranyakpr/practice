@@ -7,6 +7,8 @@ import ArticleSorting from './Component/ArticleSorting/ArticleSorting';
 import Crud from './Component/Crud/Crud';
 import Pagination from './Component/Pagination/Pagination';
 import Parent from './Component/Props/Parent';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Child from './Component/Props/Child';
 
 const App = () => {
 
@@ -21,6 +23,8 @@ const App = () => {
     },
   });
 
+  const name = 'saran';
+
   return (
     <div>
       {/* <QueryClientProvider client={queryClient}>
@@ -31,7 +35,13 @@ const App = () => {
       {/* <ArticleSorting/> */}
       {/* <Crud/> */}
       {/* <Pagination/> */}
-      <Parent/>
+      {/* <Parent/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Parent/>}/>
+          <Route path='/child' element={<Child/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

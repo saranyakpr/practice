@@ -1,24 +1,11 @@
-import React, { useState } from 'react'
-import Button from './Button';
-import Child from './Child';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Parent = () => {
-
-    const [count, setCount] = useState(0);
-
-    const increment = () => {
-        setCount(count + 1);
-    }
-
-    const decrement = () => {
-        setCount(count - 1);
-    }
-
   return (
     <div>
-        {count}
-      <Button text="Increment" handleClick={increment}/>
-      <Child handleClick={decrement}/>
+      <h2>parent</h2>
+      <Link to="/child">Go to Child</Link>
     </div>
   )
 }

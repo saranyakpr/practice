@@ -1,10 +1,14 @@
 import React from 'react'
-import Button from './Button'
+import { useNavigate } from 'react-router-dom'
 
-const Child = ({handleClick}) => {
+const Child = () => {
+
+  const nav = useNavigate()
+
   return (
     <div>
-      <Button text="Decrement" handleClick={handleClick}/>
+      <h2>child</h2>
+      <button onClick={() => nav('/')}>back to parent</button>
     </div>
   )
 }
