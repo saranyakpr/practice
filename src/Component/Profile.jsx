@@ -1,15 +1,18 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../Context/UserContext';
+import { useContext } from "react"
+import { UserContext } from "../Context/UserContext"
 
 const Profile = () => {
 
-    const { name, location } = useContext(UserContext);
+    const {location, setLocation} = useContext(UserContext)
 
   return (
     <div>
-      <h2>This is Profile</h2>
-      <p>Name: {name}</p>
-      <p>Location: {location}</p>
+        <input 
+            type="text" 
+            placeholder="enter your location"
+            value={location}
+            onChange={(e)=>setLocation(e.target.value)}
+        />
     </div>
   )
 }

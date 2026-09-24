@@ -11,9 +11,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Child from './Component/Props/Child';
 import Home from './Component/Home';
 import Profile from './Component/Profile';
-import { UserContext, UserProvider } from './Context/UserContext';
+import { UserProvider } from './Context/UserContext';
 import About from './Component/About';
-import Service from './Component/Service';
 
 const App = () => {
 
@@ -27,9 +26,7 @@ const App = () => {
       },
     },
   });
-
-  const name = 'saran';
-
+  
   return (
     <div>
       {/* <QueryClientProvider client={queryClient}>
@@ -41,13 +38,18 @@ const App = () => {
       {/* <Crud/> */}
       {/* <Pagination/> */}
       {/* <Parent/> */}
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Parent/>}/>
+          <Route path='/child' element={<Child/>}/>
+        </Routes>
+      </BrowserRouter> */}
       <UserProvider>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/about' element={<About/>}/>
             <Route path='/profile' element={<Profile/>}/>
-            <Route path='/service' element={<Service/>}/>
+            <Route path='/about' element={<About/>}/>
           </Routes>
         </BrowserRouter>
       </UserProvider>

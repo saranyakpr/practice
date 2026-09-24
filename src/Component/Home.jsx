@@ -1,24 +1,25 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../Context/UserContext';
-import About from './About';
-import Profile from './Profile';
+import { useContext } from "react"
+import { UserContext } from "../Context/UserContext"
+import Profile from "./Profile"
+import About from "./About"
 
 const Home = () => {
 
-    const { name, setName } = useContext(UserContext);
+    const {name, setName} = useContext(UserContext)
 
   return (
     <>
         <div>
-        <input 
-            type="text" 
-            placeholder='Enter your name'
-            value={name}
-            onChange={(e)=>setName(e.target.value)}
-        />
+            <h1>this is home</h1>
+            <input 
+                type="text" 
+                placeholder="enter your name"
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
+            />
         </div>
-        <About/>
         <Profile/>
+        <About/>
     </>
   )
 }
