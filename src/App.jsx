@@ -9,10 +9,9 @@ import Pagination from './Component/Pagination/Pagination';
 import Parent from './Component/Props/Parent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Child from './Component/Props/Child';
-import Home from './Component/Home';
-import Profile from './Component/Profile';
-import { UserProvider } from './Context/UserContext';
-import About from './Component/About';
+import Navbar from './Component/Context/Navbar';
+import Home from './Component/Context/Home';
+import { CartProvider } from './Component/Context/UserContext';
 
 const App = () => {
 
@@ -44,15 +43,13 @@ const App = () => {
           <Route path='/child' element={<Child/>}/>
         </Routes>
       </BrowserRouter> */}
-      <UserProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path='/about' element={<About/>}/>
-          </Routes>
-        </BrowserRouter>
-      </UserProvider>
+      <CartProvider>
+        <div className='p-5'>
+          <Navbar/>
+          <Home/>
+        </div>
+      </CartProvider>
+      
     </div>
   )
 }
