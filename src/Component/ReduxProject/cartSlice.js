@@ -10,7 +10,55 @@ const cartSlice = createSlice({
 
   reducers: {
     addToCart: (state, action) => {
-      state.cartItems.push(action.payload);
+
+      const existingItem = state.cartItems.find(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.cartItems.push({
+          ...action.payload,
+          quantity: 1
+        });
+      }
+    },
+
+    increaseQuantity: (state, action) => {
+
+      const item = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+
+    decreaseQuantity: (state, action) => {
+
+      const item = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+
+      if (item) {
+
+        if (item.quantity > 1) {
+          item.quantity -= 1;
+        } else {
+          state.cartItems = state.cartItems.filter(
+            (item) => item.id !== action.payload
+          );
+        }
+
+      }
+    },
+
+    removeFromCart: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
     },
 
     addToWishlist: (state, action) => {
@@ -19,6 +67,12 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addToCart, addToWishlist } = cartSlice.actions;
+export const {
+  addToCart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromCart,
+  addToWishlist
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

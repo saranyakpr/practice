@@ -1,6 +1,6 @@
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -12,10 +12,12 @@ const Navbar = () => {
     (state) => state.cart.wishlistItems
   );
 
+  const nav = useNavigate();
+
   return (
     <div className="flex justify-between">
 
-      <div>
+      <div onClick={()=>nav('/')} className="cursor-pointer">
         logo
       </div>
 
