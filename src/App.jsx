@@ -10,6 +10,9 @@ import Parent from './Component/Props/Parent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Child from './Component/Props/Child';
 import { CartProvider } from './Component/Context/UserContext';
+// import Home from './Component/Redux/Home';
+// import Profile from './Component/Redux/Profile';
+// import { store } from './Component/Redux/store';
 import Navbar from './Component/ReduxProject/Navbar';
 import Home from './Component/ReduxProject/Home';
 import { Provider } from 'react-redux';
@@ -52,6 +55,10 @@ const App = () => {
           <Home/>
         </div>
       </CartProvider> */}
+      {/* <Provider store={store}>
+        <Home/>
+        <Profile/>
+      </Provider> */}
       <Provider store={store}>
         <BrowserRouter>
           <Navbar/>
@@ -60,7 +67,6 @@ const App = () => {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         </BrowserRouter>
-        
       </Provider>
       
     </div>
