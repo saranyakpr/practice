@@ -9,9 +9,12 @@ import Pagination from './Component/Pagination/Pagination';
 import Parent from './Component/Props/Parent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Child from './Component/Props/Child';
-import Navbar from './Component/Context/Navbar';
-import Home from './Component/Context/Home';
 import { CartProvider } from './Component/Context/UserContext';
+import Navbar from './Component/ReduxProject/Navbar';
+import Home from './Component/ReduxProject/Home';
+import { Provider } from 'react-redux';
+import { store } from './Component/ReduxProject/store';
+import Cart from './Component/ReduxProject/Cart';
 
 const App = () => {
 
@@ -43,12 +46,22 @@ const App = () => {
           <Route path='/child' element={<Child/>}/>
         </Routes>
       </BrowserRouter> */}
-      <CartProvider>
+      {/* <CartProvider>
         <div className='p-5'>
           <Navbar/>
           <Home/>
         </div>
-      </CartProvider>
+      </CartProvider> */}
+      <Provider store={store}>
+        <Navbar/>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+          </Routes>
+        </BrowserRouter>
+        
+      </Provider>
       
     </div>
   )
