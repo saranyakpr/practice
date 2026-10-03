@@ -18,6 +18,7 @@ import Home from './Component/ReduxProject/Home';
 import { Provider } from 'react-redux';
 import { store } from './Component/ReduxProject/store';
 import Cart from './Component/ReduxProject/Cart';
+import Sample from './Sample';
 
 const App = () => {
 
@@ -59,7 +60,7 @@ const App = () => {
         <Home/>
         <Profile/>
       </Provider> */}
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <BrowserRouter>
           <Navbar/>
           <Routes>
@@ -67,8 +68,8 @@ const App = () => {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         </BrowserRouter>
-      </Provider>
-      
+      </Provider> */}
+      <Sample/>
     </div>
   )
 }
